@@ -17,9 +17,6 @@
 
 package it.feio.android.omninotes;
 
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.crashes.Crashes;
 
 import static it.feio.android.omninotes.OmniNotes.isDebugBuild;
 import static it.feio.android.omninotes.helpers.AppVersionHelper.isAppUpdated;
@@ -111,9 +108,6 @@ public class MainActivity extends BaseActivity implements
 
     EventBus.getDefault().register(this);
     Prefs.getPreferences().registerOnSharedPreferenceChangeListener(this);
-
-    AppCenter.start(getApplication(), "{24d15cd6-c486-4f93-ae71-71670c615208}",
-                  Analytics.class, Crashes.class);
 
     initUI();
   }
